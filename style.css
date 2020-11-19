@@ -1,77 +1,150 @@
 body {
-    margin: 0%;
-    background-color: beige;
+    background: repeating-linear-gradient(20deg, #818181 0%, #c3ceff 0%, #e2e1e1 0%, #3391e96c 20%) 0 / 20px 20px;
+}
+
+h3 {
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 48px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.726);
+}
+
+.level {
+    width: 10%;
+    cursor: pointer;
+    font-size: 18px;
+    outline-style: none;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    position: relative;
+    left: 35%;
+    font-family: fantasy;
+    letter-spacing: 0.2.5px;
+}
+
+.level:hover {
+    transition: 0.5s;
+    width: 11%;
+    background-color: rgba(133, 198, 241, 0.712);
+    border-radius: 10px;
+    font-stretch: expanded;
 }
 
 .smiley {
-    position: relative;
-    left: 15%;
+    position: absolute;
+    left: 48.5%;
+    top: 27.5%;
     outline-style: none;
     padding: 5px;
-    border-radius: 5px;
-    height: 25px;
+    border: none;
+    height: 28px;
     line-height: 8px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: transparent;
 }
 
 .timer {
     height: 20px;
-    background-color: rgba(0, 0, 0, 0.801);
-    color: rgb(235, 217, 191);
+    background-color: transparent;
+    color: black;
     border-radius: 20px;
-    width: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+    width: 100px;
     text-align: center;
     line-height: 20px;
-    padding: 3px;
-    display: inline-block;
-    margin: 8px;
+    position: absolute;
+    top: 28%;
+    left: 58%;
 }
 
 .flags {
-    display: inline block;
+    position: absolute;
+    top: 28%;
+    left: 36%;
     font-size: 22px;
-    border: solid 3px black;
     text-align: center;
     width: 65px;
     padding: 2px;
-    line-height: 20px;
+    line-height: 18px;
     font-family: fantasy;
     font-variant: small-caps;
 }
 
 .lives {
     font-size: 23px;
-    width: 55px;
+    width: 150px;
     position: absolute;
-    left: 20%;
-    top: 80px;
-    border: solid black 3px;
+    left: 44%;
+    top: 20%;
+    border: none;
     line-height: 20px;
     padding: 2px;
     font-variant: small-caps;
     font-family: fantasy;
-    transition: 2s
 }
 
-.lives-lose {
-    width: 45px;
+.lives-lose span {
+    transition: 0.4s;
+    line-height: 20px;
+    font-size: 28px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cell {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-size: 20px;
-    border: solid black;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(164, 186, 189, 0.849);
+    border: 5px solid;
+    border-top-color: #fdfcfc;
+    border-right-color: #7B7B7B;
+    border-bottom-color: #7B7B7B;
+    border-left-color: #e2dddd;
     cursor: pointer;
+    border-width: thick 5.5px;
 }
 
 .pressed-cell {
-    background-color: rgb(240, 198, 140);
+    width: 35px;
+    height: 35px;
+    background-color: rgb(139, 163, 165);
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    font-family: fantasy;
+    color: rgb(3, 3, 109);
+}
+
+.pressed-cell1 {
+    color: blue;
+}
+
+.pressed-cell2 {
+    border: none;
+    text-align: center;
+    color: green;
+}
+
+.pressed-cell3 {
+    background-color: rgb(139, 163, 165);
+    border: none;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    font-weight: bolder;
 }
 
 table {
-    margin: 0%;
-    position: absolute;
-    top: 20%;
-    empty-cells: show;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
 }

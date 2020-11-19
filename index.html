@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="init()" oncontextmenu="return false;"></body>>
-<div class="level">
-    <button onclick="chooseLevel(this)" data-level="4">Beginner(16)</button>
-    <button onclick="chooseLevel(this)" data-level="8">Medium(64)</button>
-    <button onclick="chooseLevel(this)" data-level="12">Expert(144)</button><br>
-    <div class="timer"></div>
+<body onload="init()" oncontextmenu="return false;"></body>
+<h3>The Mine Sweaper</h3>
+<div class="elements">
+    <div>
+        <button class="level" onclick="chooseLevel(this)" data-level="4">Beginner(16)</button>
+        <button class="level" onclick="chooseLevel(this)" data-level="8">Medium(64)</button>
+        <button class="level" onclick="chooseLevel(this)" data-level="12">Expert(144)</button><br>
+    </div>
+    <div class="timer">⏰<span></span></div>
     <button class="smiley" onclick="init()">🙂</button>
-    <div class="flags">flags <span></span></div>
+    <div class="flags">🚩 <span></span></div>
     <div class="lives">lives <span></span></div>
-</div>
 
-
+</div>>
+<div class="records-names"><span></span></div>
 
 <div>
     <table>

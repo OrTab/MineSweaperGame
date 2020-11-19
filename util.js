@@ -6,10 +6,11 @@ var gTimerIntervalId;
 
 function timer() {
     var currTime = Date.now();
-    var elStopWatch = document.querySelector('.timer');
+    var elStopWatch = document.querySelector('.timer span');
     gTimerIntervalId = setInterval(function() {
         var timePassed = Date.now() - currTime;
-        elStopWatch.innerText = (timePassed / 1000);
+
+        elStopWatch.innerText = (timePassed / 1000).toFixed(1)
     }, 100)
     return elStopWatch;
 }

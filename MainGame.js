@@ -61,7 +61,6 @@ function renderBoard(board) {
     for (var i = 0; i < board.length; i++) {
         strHTML += `<tr>`
         for (var j = 0; j < board[0].length; j++) {
-            var cell = board[i][j]
             var className = `cell cell${i}-${j}`;
             strHTML += `<td class="${className}" onclick="cellClicked(this,${i},${j})" 
             oncontextmenu="cellMarked(${i},${j})"></td>`
@@ -97,7 +96,11 @@ function cellClicked(elCell, i, j) {
     var location = { i: i, j: j };
     if (!gGame.isOn || currCell.isMarked || currCell.isShown) return
     gGame.shownCount++
-        elCell.classList.add('pressed-cell')
+        var numberOfMineNegs = setMinesNegsCount(location);
+    if (numberOfMineNegs === 1) elCell.classList.add('pressed-cell1')
+    if (numberOfMineNegs === 2) elCell.classList.add('pressed-cell2')
+    if (numberOfMineNegs === 3) elCell.classList.add('pressed-cell3')
+    else { elCell.classList.add('pressed-cell') }
 
     if (gGame.shownCount === 1) {
         gGame.secPassed = timer()
@@ -116,7 +119,6 @@ function cellClicked(elCell, i, j) {
             return
 
     }
-    var numberOfMineNegs = setMinesNegsCount(location);
 
     if (numberOfMineNegs >= 1) {
 
@@ -142,9 +144,7 @@ function cellClicked(elCell, i, j) {
             shownExpand()
         } else {
             shownExpand()
-
         }
-
     }
 
     if (gGame.markedCount + gGame.shownCount === gLevel.NUMBEROFCELLS) checkGameOver(true)
@@ -152,7 +152,7 @@ function cellClicked(elCell, i, j) {
 
 
 function checkExpand(pos) {
-    // debugger
+
     gEmptyLocations = []
     var emptyLocation;
     isChecked = true
@@ -255,8 +255,15 @@ function reduceLives() {
         }
     var elLives = document.querySelector('.lives')
     elLives.classList.add('lives-lose')
+    setTimeout(function() {
+        elLives.classList.remove('lives-lose')
+    }, 500)
     var numOfLives = document.querySelector('.lives span')
-    numOfLives.innerText = gGame.lives
+    if (gGame.lives === 3) numOfLives.innerText = '❤️ ❤️ ❤️'
+    if (gGame.lives === 2) numOfLives.innerText = '❤️ ❤️'
+    if (gGame.lives === 1) numOfLives.innerText = '❤️'
+    if (gGame.lives === 0) numOfLives.innerText = '💔'
+
 }
 
 
@@ -272,7 +279,6 @@ function explodMines() {
 
 
 function checkGameOver(isVictory) {
-
     var elSmiley = document.querySelector('.smiley');
     var smileyHtml = (isVictory) ? ' 😎' : '🤯';
     elSmiley.innerText = smileyHtml
@@ -306,12 +312,12 @@ function setDetailsForStart() {
     var elLives = document.querySelector('.lives')
     elLives.classList.remove('lives-lose')
     var numOfLives = document.querySelector('.lives span')
-    numOfLives.innerText = gGame.lives
+    numOfLives.innerText = '❤️ ❤️ ❤️'
     var elSmiley = document.querySelector('.smiley');
     elSmiley.innerText = '🙂'
     clearInterval(gTimerIntervalId)
-    var elStopWatch = document.querySelector('.timer');
-    elStopWatch.innerText = '0.000'
+    var elStopWatch = document.querySelector('.timer span');
+    elStopWatch.innerText = '0.0'
     gGame.shownCount = 0
     gGame.markedCount = 0
     gLevel.NUMBEROFFLAGS = gLevel.MINES
@@ -319,3 +325,18 @@ function setDetailsForStart() {
     elFlagsNum.innerText = gLevel.NUMBEROFFLAGS
 
 }
+
+//still working on it
+
+// function records() {
+
+//     var elRecord = document.querySelector('.records-names span');
+//     var elTimer = document.querySelector('.timer span');
+//     var secPassed = elTimer.innerText;
+//     localStorage.setItem('Time', `${secPassed}`)
+//     if (localStorage.getItem('Time') < secPassed) {
+//         localStorage.setItem('Time', `${secPassed}`)
+
+//     }
+//     elRecord.innerText = localStorage.getItem('Time', `${secPassed}`)
+// }
