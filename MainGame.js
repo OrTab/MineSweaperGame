@@ -190,11 +190,11 @@ function shownExpand() {
 
 
 function cellMarked(i, j) {
-
-    if (!gGame.isOn) return
-
     var currCell = gBoard[i][j]
     var location = { i: i, j: j };
+
+    if (!gGame.isOn || currCell.isShown) return
+
 
     if (!currCell.isMarked && gLevel.NUMBEROFFLAGS > 0) {
         //Update the Model
