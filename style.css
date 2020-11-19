@@ -1,4 +1,5 @@
 body {
+    margin: 0px;
     background: repeating-linear-gradient(20deg, #818181 0%, #c3ceff 0%, #e2e1e1 0%, #3391e96c 20%) 0 / 20px 20px;
 }
 
