@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Sweaper Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()" oncontextmenu="return false;"></body>>
+<div class="level">
+    <button onclick="chooseLevel(this)" data-level="4">Beginner(16)</button>
+    <button onclick="chooseLevel(this)" data-level="8">Medium(64)</button>
+    <button onclick="chooseLevel(this)" data-level="12">Expert(144)</button><br>
+    <div class="timer"></div>
+    <button class="smiley" onclick="init()">🙂</button>
+    <div class="flags">flags <span></span></div>
+    <div class="lives">lives <span></span></div>
+</div>
+
+
+
+<div>
+    <table>
+        <tbody class="board-container"></tbody>
+
+    </table>
+</div>
+
+
+<script src="util.js"></script>
+<script src="MainGame.js"></script>
+</body>
+
+</html>

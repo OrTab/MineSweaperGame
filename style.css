@@ -1,0 +1,77 @@
+body {
+    margin: 0%;
+    background-color: beige;
+}
+
+.smiley {
+    position: relative;
+    left: 15%;
+    outline-style: none;
+    padding: 5px;
+    border-radius: 5px;
+    height: 25px;
+    line-height: 8px;
+}
+
+.timer {
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.801);
+    color: rgb(235, 217, 191);
+    border-radius: 20px;
+    width: 50px;
+    text-align: center;
+    line-height: 20px;
+    padding: 3px;
+    display: inline-block;
+    margin: 8px;
+}
+
+.flags {
+    display: inline block;
+    font-size: 22px;
+    border: solid 3px black;
+    text-align: center;
+    width: 65px;
+    padding: 2px;
+    line-height: 20px;
+    font-family: fantasy;
+    font-variant: small-caps;
+}
+
+.lives {
+    font-size: 23px;
+    width: 55px;
+    position: absolute;
+    left: 20%;
+    top: 80px;
+    border: solid black 3px;
+    line-height: 20px;
+    padding: 2px;
+    font-variant: small-caps;
+    font-family: fantasy;
+    transition: 2s
+}
+
+.lives-lose {
+    width: 45px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    border: solid black;
+    cursor: pointer;
+}
+
+.pressed-cell {
+    background-color: rgb(240, 198, 140);
+}
+
+table {
+    margin: 0%;
+    position: absolute;
+    top: 20%;
+    empty-cells: show;
+}
