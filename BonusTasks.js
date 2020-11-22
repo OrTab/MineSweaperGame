@@ -92,11 +92,11 @@ function records() {
     var elRecord = document.querySelector('.records span');
     var elTimer = document.querySelector('.timer span');
     var secPassed = elTimer.innerText;
-    if (localStorage.length === 0) localStorage.setItem('Time', `${secPassed}`)
-    if (localStorage.getItem('Time') > +secPassed) {
-        localStorage.setItem('Time', `${secPassed}`)
+    if (sessionStorage.length === 0) sessionStorage.setItem('Time', `${secPassed}`)
+    if (sessionStorage.getItem('Time') > +secPassed) {
+        sessionStorage.setItem('Time', `${secPassed}`)
 
     }
-    elRecord.innerText = localStorage.getItem('Time', `${secPassed}`)
+    elRecord.innerText = sessionStorage.getItem('Time', `${secPassed}`)
 
 }

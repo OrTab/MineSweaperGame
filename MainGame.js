@@ -310,5 +310,5 @@ function setDetailsForStart() {
     document.querySelector('.hint span').innerText = '💡💡💡'
     gCountHints = 3
     var elRecord = document.querySelector('.records span');
-    elRecord.innerText = localStorage.getItem('Time')
+    elRecord.innerText = sessionStorage.getItem('Time')
 }
