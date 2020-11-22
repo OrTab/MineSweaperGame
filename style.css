@@ -30,7 +30,7 @@ h3 {
 }
 
 .level:hover {
-    transition: 0.5s;
+    transition: 1s;
     width: 11%;
     background-color: rgba(133, 198, 241, 0.712);
     border-radius: 10px;
