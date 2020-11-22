@@ -70,3 +70,14 @@ function getElement(location) {
     var elCell = document.querySelector(`.cell${location.i}-${location.j}`);
     return elCell;
 }
+
+
+function setColorsForNums(mineNegs, elCell) {
+
+    if (mineNegs === 1) elCell.style.color = 'blue'
+    if (mineNegs === 2) elCell.style.color = 'green'
+    if (mineNegs === 3) elCell.style.color = 'red'
+    if (mineNegs === 4) elCell.style.color = 'darkblue'
+    if (mineNegs === 5) elCell.style.color = 'darkred'
+
+}
