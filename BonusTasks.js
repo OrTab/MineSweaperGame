@@ -85,7 +85,6 @@ function hintClick(pos) {
 
 
 
-
 function records() {
 
 
