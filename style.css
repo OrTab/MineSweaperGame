@@ -70,7 +70,7 @@ h3 {
 .hint {
     background-color: transparent;
     border: none;
-    width: 10%;
+    width: 9%;
     cursor: pointer;
     font-size: 18.5px;
     outline-style: none;
@@ -85,7 +85,7 @@ h3 {
 
 .hint:hover {
     transition: 0.5s;
-    width: 11%;
+    width: 10%;
     background-color: rgba(133, 198, 241, 0.712);
     border-radius: 10px;
     font-stretch: expanded;
